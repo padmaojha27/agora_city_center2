@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:agora_city_center/common_widgets/top_bar.dart';
 import 'package:agora_city_center/utilities/colors.dart';
 import 'package:agora_city_center/utilities/app_constants.dart';
-
+import 'package:firebase_database/firebase_database.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/rendering.dart';
@@ -13,6 +13,9 @@ class BookNowScreen extends StatefulWidget {
 }
 
 class BookNowScreenWidget extends State {
+
+
+
 String radioItem;
 FocusNode myFocusNode = new FocusNode();
 FocusNode myFocusNode2 = new FocusNode();
@@ -51,6 +54,13 @@ void _requestFocus3(){
   });
 }
 
+
+final DatabaseReference bookingRef =FirebaseDatabase.instance.reference().child('Booking');
+
+void addData(String fname,String lname,String email,String mobile,String buy,String unit) {
+  String bookingId = bookingRef.push().key;
+  bookingRef.child(bookingId).set({'fname': fname,'lname': lname,'email':email,'phone':mobile,'buy':buy,'unit':unit});
+}
 
 String validateEmail(String email) {
     String pattern = r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
@@ -308,6 +318,21 @@ void dispose() {
                 _value = value;
                 selectedBuyOption=value.toString();
                 print(value.toString());
+
+                if(value==2){
+                  selectedBuyOption = 'Commercial';
+                   }
+                else if(value==3)
+                  {
+                    selectedBuyOption = 'Residential';
+
+                  }
+                else if(value==4)
+                {
+                  selectedBuyOption = 'Club Membership';
+
+                }
+
               });
             }),
 
@@ -393,13 +418,10 @@ void dispose() {
                     }
                     else
                       {
+                        addData(firstName.text, lastName.text, userEmail.text, constants.phoneno, selectedBuyOption, unit);
                         firstName.text="";
                         lastName.text="";
                         userEmail.text="";
-
-
-
-
                         Fluttertoast.showToast(
                             msg: "Thank you for showing interest in Shree Balaji Group.",
                             toastLength: Toast.LENGTH_SHORT,

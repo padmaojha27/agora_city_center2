@@ -83,16 +83,16 @@ class RetailShowroomScreenWidget extends State {
                   ),
                   common_widgets().row_item('assets/images/app_icons/fplan.png',"Typical Plan","Ground Floor",'assets/images/app_icons/fplan.png',"Typical Plan","First Floor",'assets/images/app_icons/fplan.png',"Typical Plan","Second Floor","retail",context),
 
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"Ground Floor","384 Sq.Ft. Super Built Up","201.07 Sq.Ft. Carpet Area","A Wing","142 Shops","assets/plans/agroundfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"Ground Floor","224.16 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","B Wing","168 Shops","assets/plans/bgroundfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"Ground Floor - Banquet Hall","224.16 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","C Wing","154 Shops","assets/plans/cgroundfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"First Floor","309 Sq.Ft. Super Built Up","176 Sq.Ft. Carpet Area","A Wing","142 Shops","assets/plans/afirstfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"First Floor","224.11 Sq.Ft. Super Built Up","127.05 Sq.Ft. Carpet Area","B Wing","161 Shops","assets/plans/bfirstfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"First Floor - Banquet Hall","224.16 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","C Wing","147 Shops","assets/plans/cfirstfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"Second Floor","309 Sq.Ft. Super Built Up","176 Sq.Ft. Carpet Area","A Wing","142 Shops","assets/plans/asecondfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"Second Floor - Food Court + Game Zone","224.11 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","B Wing","78 Shops","assets/plans/bsecondfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"Second Floor - Multiplex Entertainment Area","224.11 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","C Wing","73 Shops","assets/plans/csecondfloorshop.pdf",context),
-                  row_card_widget().child_row_off('assets/images/app_icons/retail.png',"Second Floor ","405.96 Sq.Ft.-233.3 Sq.Ft.","","D Wing","44 Shops","assets/plans/bcdsecondfloorshop.pdf",context),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"Ground Floor","384 Sq.Ft. Super Built Up","201.07 Sq.Ft. Carpet Area","A Wing","142 Shops","assets/plans/agroundfloorshop.pdf",context,"Rs 22,000 - Rs 16,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"Ground Floor","224.16 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","B Wing","168 Shops","assets/plans/bgroundfloorshop.pdf",context,"Rs 22,000 - Rs 16,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"Ground Floor - Banquet Hall","224.16 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","C Wing","154 Shops","assets/plans/cgroundfloorshop.pdf",context,"Rs 22,000 - Rs 16,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"First Floor","309 Sq.Ft. Super Built Up","176 Sq.Ft. Carpet Area","A Wing","142 Shops","assets/plans/afirstfloorshop.pdf",context,"Rs 20,000 - Rs 15,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"First Floor","224.11 Sq.Ft. Super Built Up","127.05 Sq.Ft. Carpet Area","B Wing","161 Shops","assets/plans/bfirstfloorshop.pdf",context,"Rs 20,000 - Rs 15,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"First Floor - Banquet Hall","224.16 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","C Wing","147 Shops","assets/plans/cfirstfloorshop.pdf",context,"Rs 20,000 - Rs 15,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"Second Floor","309 Sq.Ft. Super Built Up","176 Sq.Ft. Carpet Area","A Wing","142 Shops","assets/plans/asecondfloorshop.pdf",context,"Rs 18,000 - Rs 15,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"Second Floor - Food Court + Game Zone","224.11 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","B Wing","78 Shops","assets/plans/bsecondfloorshop.pdf",context,"Rs 18,000 - Rs 15,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"Second Floor - Multiplex Entertainment Area","224.11 Sq.Ft. Super Built Up","127.5 Sq.Ft. Carpet Area","C Wing","73 Shops","assets/plans/csecondfloorshop.pdf",context,"Rs 18,000 - Rs 15,000 Per Sq Ft."),
+                  row_card_widget().child_row_off2('assets/images/app_icons/retail.png',"Second Floor ","405.96 Sq.Ft.-233.3 Sq.Ft.","","D Wing","44 Shops","assets/plans/bcdsecondfloorshop.pdf",context,"Rs 18,000 - Rs 15,000 Per Sq Ft."),
 
                 ]
             )

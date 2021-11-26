@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:agora_city_center/HomeScreen.dart';
 import 'package:agora_city_center/utilities/colors.dart';
 import 'package:agora_city_center/utilities/app_strings.dart';
@@ -7,10 +8,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:sms_autofill/sms_autofill.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class VerificationScreen extends StatefulWidget {
   String phonenumber;
+
   VerificationScreen(String pn){this.phonenumber=pn;}
   VerificationScreenWidget createState() => VerificationScreenWidget(phonenumber);
 }
@@ -20,8 +23,16 @@ class VerificationScreenWidget extends State {
   Timer timer;
   bool isLoading;
   BuildContext dialogContext;
+  final DatabaseReference _messagesRef =
+  FirebaseDatabase.instance.reference().child('contact');
 
-
+  void addData(String data) {
+    //databaseRef.push().set({'name': data, 'comment': 'A good season'});
+    String inqId = _messagesRef.push().key;//.push().getKey();
+    String formattedDate = DateFormat('dd-MM-yyyy').format(DateTime.now());
+    String formattedTime = DateFormat('HH:mm:ss').format(DateTime.now());
+    _messagesRef.child(inqId).set({'phonenumber': data,'CurrentDate' : formattedDate,'CurrentTime':formattedTime});
+  }
 
 
   addToSP() async {
@@ -35,18 +46,23 @@ class VerificationScreenWidget extends State {
     print('in verify phone');
     final PhoneCodeAutoRetrievalTimeout autoRetrieve = (String verId){
       this.verificationId = verId;
+      verifyCode.text=verificationId;
       print("AUTOR Verification ID :"+verId);
     };
-    final PhoneCodeSent smsCodeSent= (String verId, [int forceCodeResent]) {
+    final PhoneCodeSent smsCodeSent= (String verId, [int forceCodeResent]) async {
       this.verificationId = verId;
+
       print("SMSCODE Verification ID :"+verId);
     /*  smsCodeDialoge(context).then((value){
         print("Code Sent");
       });*/
       print("Code Sent");
+
+       // final signature=await SmsAutoFill().getAppSignature;
     };
 
     final PhoneVerificationCompleted verifiedSuccess= (AuthCredential auth){
+
      // gotoSecondActivity(context);
         //isLoading=false;
        // Navigator.pop(dialogContext);
@@ -106,11 +122,11 @@ class VerificationScreenWidget extends State {
   }
 */
 
-
-
   @override
   initState() {
     super.initState();
+
+_listOPT();
     timer = Timer.periodic(Duration(seconds: 2), (Timer t) => isLoading);
     Firebase.initializeApp().whenComplete(() {
       print("completed");
@@ -153,7 +169,7 @@ class VerificationScreenWidget extends State {
     Navigator.of(context).push(_createRoute());
   }
 
-  final verifyCode =TextEditingController();
+   var verifyCode =TextEditingController();
 
 
   Future<void> signIn(String smsCode) async{
@@ -166,6 +182,8 @@ class VerificationScreenWidget extends State {
 
       if(user != null){
         //Navigator.of(context).pop();
+      //  verifyCode.text=smsCode;
+        addData(pn);
         Navigator.push(context, MaterialPageRoute(
           builder: (context) => HomeScreen(),),
         );
@@ -253,6 +271,19 @@ class VerificationScreenWidget extends State {
     style: TextStyle(color: colors.grey_90, fontSize: 16),
     decoration: InputDecoration(hintText: 'Code'),
     )
+     /*  child: PinFieldAutoFill(
+          decoration: UnderlineDecoration(
+            textStyle: TextStyle(fontSize: 20, color: Colors.black),
+            colorBuilder: FixedColorBuilder(Colors.black.withOpacity(0.3)),
+          ),
+          codeLength: 6,
+          onCodeSubmitted: (code) {},
+          onCodeChanged: (code) {
+            if (code.length == 6) {
+              FocusScope.of(context).requestFocus(FocusNode());
+            }
+          },
+        )*/
     ),
 
     Container(
@@ -307,6 +338,9 @@ class VerificationScreenWidget extends State {
 
   }
 
-
+  _listOPT()
+  async {
+    await SmsAutoFill().listenForCode;
+  }
 
 }

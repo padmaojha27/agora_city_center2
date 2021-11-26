@@ -315,6 +315,122 @@ class row_card_widget {
   }
 
 
+  Card child_row_off2(String image,
+      String text1, String text2, String text3, String text4, String text5,String filename,BuildContext context,String text6) {
+    String thpart = text1.substring(2,4);
+    return Card(
+      margin: EdgeInsets.only(top: 10.0, left: 10.0, right: 10.0),
+      child:Material(
+        child: InkWell(
+          onTap: () {
+            gesture_handler().openPDFView(context,filename,"l");
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              /*Expanded(
+              flex: 1,
+              child:*/
+              Container(
+                margin:EdgeInsets.all(5.0),
+                child:Image.asset(image,
+                  height: 75,
+                  width: 75,
+                  fit:BoxFit.fill,
+                ),
+              ),
+              //     ),
+              Expanded(
+                flex: 5,
+                child:
+                Container(
+                  padding:EdgeInsets.all(3.0),
+                  margin: EdgeInsets.only(top: 0.0, left: 10.0, right: 10.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 0.0, bottom: 5.0),
+                        child:
+                        Text(
+                          text1,
+                          style: TextStyle(color: colors.myTextPrimaryColor,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.left,
+                        ),
+
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 0.0, bottom: 3.0),
+                        child: Text(text2,
+                            style: TextStyle(
+                                color:colors.myTextSecondaryColor, fontSize: 12),
+                            textAlign: TextAlign.left),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 0.0, bottom: 3.0),
+                        child:
+                        Text(
+                          text3,
+                          style: TextStyle(color: colors.myTextSecondaryColor, fontSize: 12),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 0.0, bottom: 3.0),
+                        child:
+                        Text(
+                          text4,
+                          style: TextStyle(color: colors.darkred, fontSize: 12),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 0.0, bottom: 3.0),
+                        child:
+                        Text(
+                          text6,
+                          style: TextStyle(color: colors.sbglogoorange, fontSize: 11),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              Container(
+                padding: EdgeInsets.only(top: 2, bottom: 2, left:2,right:2),
+                margin:EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  color: colors.green,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(2),
+                    bottomRight: Radius.circular(2),
+                    topLeft: Radius.circular(2),
+                    bottomLeft: Radius.circular(2),
+                  ),
+                ),
+                child: Text(text5,
+                  style: TextStyle(color: Colors.white, fontSize: 10),
+                  textAlign: TextAlign.center,
+                ),
+
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+
+
+
+
   Card child_row_club(String image,
       String text1, String text2, String text3, String text4,BuildContext context) {
     return Card(

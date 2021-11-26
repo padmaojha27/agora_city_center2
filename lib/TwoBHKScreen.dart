@@ -69,7 +69,7 @@ class TwoBHKScreenWidget extends State {
         Container(
           color:colors.grey,
           child:
-          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Terrace"," 963.56Sq. Ft"," Rs.5500/- Per Sq.Ft.","78",'assets/plans/twobhkunitplan.pdf',context),
+          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Terrace"," 963.56Sq. Ft"," Rs.6500/- Per Sq.Ft.","78",'assets/plans/twobhkunitplan.pdf',context),
         ),
             row_card_widget().heading_row("2 BHK Homes With "),
 

@@ -39,6 +39,7 @@ final List<String> imagesList = [
 ];
 
 
+
 BoomMenu buildBoomMenu(BuildContext context) {
 
   return BoomMenu(
@@ -196,8 +197,42 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenWidget extends State {
+  final keyIsFirstLoaded = 'is_first_loaded';
+
   int currentPos = 0;
   String text,subject;
+
+  showDialogIfFirstLoaded(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isFirstLoaded = prefs.getBool(keyIsFirstLoaded);
+    if (isFirstLoaded == null) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return AlertDialog(
+            title: new Text("Title"),
+            content: new Text("This is one time dialog"),
+            actions: <Widget>[
+              // usually buttons at the bottom of the dialog
+              new FlatButton(
+                child: new Text("Dismiss"),
+                onPressed: () {
+                  // Close the dialog
+                  Navigator.of(context).pop();
+                  prefs.setBool(keyIsFirstLoaded, false);
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+
+
+
 
   Dialog disclaimerDialog()
   {
@@ -263,6 +298,7 @@ class HomeScreenWidget extends State {
           child: Text('ACCEPT'),
           onPressed: () {
             Navigator.pop(context);
+
           }),
     ),
 
@@ -272,6 +308,93 @@ class HomeScreenWidget extends State {
         ),
     );
   }
+
+
+   showDialogFirst(BuildContext context) async
+  {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isFirstLoaded = prefs.getBool(keyIsFirstLoaded);
+    if (isFirstLoaded == null) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return Dialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(2),
+              ),
+              elevation: 0,
+              backgroundColor: Colors.white,
+              child:
+              Container(
+
+                margin: EdgeInsets.all(0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.only(top: 0.0, bottom: 0.0),
+
+                      child: Image.asset(
+                        'assets/images/advertisement/adv1.jpg',
+                      ),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child:
+                          Container(
+                            margin: EdgeInsets.all(2),
+
+                            child: RaisedButton(
+                              // onPressed: getValues,
+                                color: colors.sbglogoorange,
+                                textColor: Colors.white,
+
+                                child: Text('SKIP'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  prefs.setBool(keyIsFirstLoaded, false);
+
+                                }),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+
+                          child: Container(
+                            margin: EdgeInsets.all(2),
+
+                            child: RaisedButton(
+                              // onPressed: getValues,
+                                color: colors.sbglogoorange,
+                                textColor: Colors.white,
+
+                                child: Text('VIEW MORE'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+
+                                  openAdvertisementPosterScreen();
+                                  prefs.setBool(keyIsFirstLoaded, false);
+
+                                }),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ],
+                ),
+              ),
+            );
+          });
+    }
+  }
+
+
 
   Widget popupMenuMore() {
     return PopupMenuButton(
@@ -485,7 +608,9 @@ class HomeScreenWidget extends State {
 
   @override
   Widget build(BuildContext context) {
-   // if(MediaQuery.of(context).orientation == Orientation.landscape) {
+    Future.delayed(Duration.zero, () => showDialogFirst(context));
+
+    // if(MediaQuery.of(context).orientation == Orientation.landscape) {
      /* SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
         DeviceOrientation.portraitDown,
@@ -845,11 +970,11 @@ class HomeScreenWidget extends State {
               color:colors.lightgray,
               child: Column(
                 children: <Widget>[
-            row_card_widget().child_row1(context,"2BHK",'assets/images/app_icons/home5.png', "2 BHK", "1608.81 Sq Ft. Carpet Area", "Booking Open", "Rs 5500/- Per Sq. Ft.", "FLAT"),
-            row_card_widget().child_row1(context,"3BHK",'assets/images/app_icons/home2.png', "3 BHK", "1916.96 Sq. Ft.- 2937.08 Sq. Ft. Carpet Area", "Booking Open", "Rs 5500/- Per Sq. Ft.", "FLAT"),
-            row_card_widget().child_row1(context,"4BHK",'assets/images/app_icons/house.png', "4 BHK", "2236.58 Sq. Ft.- 3482.08 Sq. Ft. Carpet Area", "Booking Open", "Rs 5500/- Per Sq. Ft.", "FLAT"),
-            row_card_widget().child_row1(context,"5BHK",'assets/images/app_icons/villa1.png', "5 BHK", "2545.45 Sq. Ft.- 3775.04 Sq. Ft. Carpet Area", "Booking Open", "Rs 6500/- Per Sq. Ft.", "VILLA"),
-            row_card_widget().child_row1(context,"6BHK",'assets/images/app_icons/villa2.png', "6 BHK", "2746 Sq. Ft.- 3508.17 Sq. Ft. Carpet Area", "Booking Open", "Rs 6500/- Per Sq. Ft.", "VILLA"),
+            row_card_widget().child_row1(context,"2BHK",'assets/images/app_icons/home5.png', "2 BHK", "1608.81 Sq Ft. Carpet Area", "Booking Open", "Rs 6500/- Per Sq. Ft.", "FLAT"),
+            row_card_widget().child_row1(context,"3BHK",'assets/images/app_icons/home2.png', "3 BHK", "1916.96 Sq. Ft.- 2937.08 Sq. Ft. Carpet Area", "Booking Open", "Rs 6500/- Per Sq. Ft.", "FLAT"),
+            row_card_widget().child_row1(context,"4BHK",'assets/images/app_icons/house.png', "4 BHK", "2236.58 Sq. Ft.- 3482.08 Sq. Ft. Carpet Area", "Booking Open", "Rs 6500/- Per Sq. Ft.", "FLAT"),
+            row_card_widget().child_row1(context,"5BHK",'assets/images/app_icons/villa1.png', "5 BHK", "2545.45 Sq. Ft.- 3775.04 Sq. Ft. Carpet Area", "Booking Open", "Rs 7500/- Per Sq. Ft.", "VILLA"),
+            row_card_widget().child_row1(context,"6BHK",'assets/images/app_icons/villa2.png', "6 BHK", "2746 Sq. Ft.- 3508.17 Sq. Ft. Carpet Area", "Booking Open", "Rs 7500/- Per Sq. Ft.", "VILLA"),
               ],
               ),
               ),
@@ -861,7 +986,6 @@ class HomeScreenWidget extends State {
                 style: TextStyle(color: Colors.black, fontSize: 22,fontWeight: FontWeight.bold,fontFamily:'serif'),
                 textAlign: TextAlign.left,
               ),
-
             ),
 
             youtube_widget().get_youtube_widget(constants.homeScreenVideoId),

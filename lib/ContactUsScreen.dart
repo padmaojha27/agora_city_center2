@@ -4,12 +4,20 @@ import 'package:agora_city_center/utilities/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:firebase_database/firebase_database.dart';
+
 
 class ContactUsScreen extends StatefulWidget {
   ContactUsScreenWidget createState() => ContactUsScreenWidget();
 }
 
 class ContactUsScreenWidget extends State {
+  final DatabaseReference contactRef =FirebaseDatabase.instance.reference().child('Inquiry');
+
+  void addData(String name,String subject,String email,String phone,String message) {
+    String inqId = contactRef.push().key;
+    contactRef.child(inqId).set({'name': name,'subject' : subject,'email':email,'phone':phone,'message':message});
+  }
 
 
   launch_browser(url) async {
@@ -284,6 +292,7 @@ class ContactUsScreenWidget extends State {
                       }
                       else
                       {
+                        addData(userName.text, userSubject.text, userEmail.text, userPhone.text, userMessage.text);
                         _validate2=false;
                         _validate3=false;
                         _validate4=false;
@@ -430,7 +439,6 @@ class ContactUsScreenWidget extends State {
                       onTap: () {
                         _launch("tel:08690853853");
                       },
-
                       child:  Icon(
                       Icons.call,
                       size: 30.0,

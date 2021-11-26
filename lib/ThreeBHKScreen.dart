@@ -68,26 +68,26 @@ class ThreeBHKScreenWidget extends State {
         Container(
           color:colors.grey,
           child:
-          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Terrace + Servant Room","1758.73 Sq. Ft"," Rs.5500/- Per Sq.Ft.","5",'assets/plans/threebhkunitplan1.pdf',context),
+          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Terrace + Servant Room","1758.73 Sq. Ft"," Rs.6500/- Per Sq.Ft.","5",'assets/plans/threebhkunitplan1.pdf',context),
         ),
             row_card_widget().heading_row("15th Floor - A,B, C Wing"),
            // row_card_widget().child_row('assets/images/app_icons/floorplan.png',"Unit Plan","1368.15 Sq.Ft",""," Rs.5500/- Per Sq.Ft.","55","y",'assets/plans/threebhkunitplan2.pdf',context),
         Container(
           color:colors.grey,
           child:
-          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan","1368.15 Sq.Ft","Rs.5500/- Per Sq.Ft.","55",'assets/plans/threebhkunitplan2.pdf',context),
+          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan","1368.15 Sq.Ft","Rs.6500/- Per Sq.Ft.","55",'assets/plans/threebhkunitplan2.pdf',context),
         ),
           //  row_card_widget().child_row('assets/images/app_icons/floorplan.png',"Unit Plan with Lower Pent House","963.36 Sq. Ft",""," Rs.5500/- Per Sq.Ft.","32","y",'assets/plans/threebhkunitplan4.pdf',context),
         Container(
           color:colors.grey,
           child:
-          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Upper Pent House","866.32 Sq. Ft"," Rs.5500/- Per Sq.Ft.","6",'assets/plans/threebhkunitplan5.pdf',context),
+          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Upper Pent House","866.32 Sq. Ft"," Rs.6500/- Per Sq.Ft.","6",'assets/plans/threebhkunitplan5.pdf',context),
         ),
           //  row_card_widget().child_row('assets/images/app_icons/floorplan.png',"Unit Plan with Lower Pent House","963.36 Sq. Ft",""," Rs.5500/- Per Sq.Ft.","32","y",'assets/plans/threebhkunitplan4.pdf',context),
         Container(
           color:colors.grey,
           child:
-          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Lower Pent House","963.36 Sq. Ft"," Rs.5500/- Per Sq.Ft.","32",'assets/plans/threebhkunitplan4.pdf',context),
+          row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Lower Pent House","963.36 Sq. Ft"," Rs.6500/- Per Sq.Ft.","32",'assets/plans/threebhkunitplan4.pdf',context),
         ),
             row_card_widget().heading_row("6th to 14th Floor - D,E,F Wing"),
         Container(

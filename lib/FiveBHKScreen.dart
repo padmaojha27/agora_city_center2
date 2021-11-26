@@ -65,25 +65,25 @@ class FiveBHKScreenWidget extends State {
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With 2 BALCONY ","1705.39 Sq. Ft"," Rs.6500/- Per Sq.Ft.","3",'assets/plans/fivebhk1.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With 2 BALCONY ","1705.39 Sq. Ft"," Rs.7500/- Per Sq.Ft.","3",'assets/plans/fivebhk1.pdf',context),
         ),
             row_card_widget().heading_row("5th & 16th Floor - D,E,F Wing"),
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - UPPER PENT HOUSE With BALCONY","1524.22 Sq. Ft"," Rs.6500/- Per Sq.Ft.","2",'assets/plans/fivebhk2.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - UPPER PENT HOUSE With BALCONY","1524.22 Sq. Ft"," Rs.7500/- Per Sq.Ft.","2",'assets/plans/fivebhk2.pdf',context),
         ),
             row_card_widget().heading_row("15th Floor - D,E,F Wing"),
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With TERRACE","2260.50 Sq.Ft"," Rs.6500/- Per Sq.Ft.","2",'assets/plans/fivebhk3.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With TERRACE","2260.50 Sq.Ft"," Rs.7500/- Per Sq.Ft.","2",'assets/plans/fivebhk3.pdf',context),
         ),
           row_card_widget().heading_row("16th Floor - D,E,F Wing"),
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - UPPER PENT HOUSE With 2 BALCONY","1638.92 Sq.Ft"," Rs.6500/- Per Sq.Ft.","2",'assets/plans/fivebhk4.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - UPPER PENT HOUSE With 2 BALCONY","1638.92 Sq.Ft"," Rs.7500/- Per Sq.Ft.","2",'assets/plans/fivebhk4.pdf',context),
         ),
           ],
         ),

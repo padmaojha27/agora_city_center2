@@ -65,13 +65,13 @@ class SixBHKScreenWidget extends State {
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM","2100.70 Sq.Ft"," Rs.6500/- Per Sq.Ft.","3",'assets/plans/sixbhk1.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM","2100.70 Sq.Ft"," Rs.7500/- Per Sq.Ft.","3",'assets/plans/sixbhk1.pdf',context),
         ),
           row_card_widget().heading_row("16th Floor - D,E,F Wing"),
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - UPPER PENT HOUSE With TERRACE","1644.67 Sq.Ft"," Rs.6500/- Per Sq.Ft.","3",'assets/plans/sixbhk2.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - UPPER PENT HOUSE With TERRACE","1644.67 Sq.Ft"," Rs.7500/- Per Sq.Ft.","3",'assets/plans/sixbhk2.pdf',context),
         ),
           ],
         ),

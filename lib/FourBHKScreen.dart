@@ -67,27 +67,27 @@ class FourBHKScreenWidget extends State {
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with TERRACE + BALCONY","2060.41 Sq.Ft"," Rs.5500/- Per Sq.Ft.","50",'assets/plans/threebhkunitplan6.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with TERRACE + BALCONY","2060.41 Sq.Ft"," Rs.6500/- Per Sq.Ft.","50",'assets/plans/threebhkunitplan6.pdf',context),
         ),
 //            row_card_widget().child_row('assets/images/app_icons/floorplan.png',"Unit Plan with Terrace + SERVANT ROOM","2085.08 Sq. Ft",""," Rs.5500/- Per Sq.Ft.","49","y",'assets/plans/threebhkunitplan7.pdf',context),
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Terrace + SERVANT ROOM","2085.08 Sq. Ft"," Rs.5500/- Per Sq.Ft.","49",'assets/plans/threebhkunitplan7.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan with Terrace + SERVANT ROOM","2085.08 Sq. Ft"," Rs.6500/- Per Sq.Ft.","49",'assets/plans/threebhkunitplan7.pdf',context),
         ),
             row_card_widget().heading_row("15th Floor - A,B,C Wing"),
             //row_card_widget().child_row('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM + TERRACE","1793.32 Sq. Ft",""," Rs.6500/- Per Sq.Ft.","3","y",'assets/plans/threebhkunitplan8.pdf',context),
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM + TERRACE","1793.32 Sq. Ft"," Rs.6500/- Per Sq.Ft.","3",'assets/plans/threebhkunitplan8.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM + TERRACE","1793.32 Sq. Ft"," Rs.7500/- Per Sq.Ft.","3",'assets/plans/threebhkunitplan8.pdf',context),
         ),
             row_card_widget().heading_row("16th Floor - A,B,C Wing"),
           //  row_card_widget().child_row('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM","1345.42 Sq.Ft",""," Rs.6500/- Per Sq.Ft.","36","y",'assets/plans/threebhkunitplan9.pdf',context),
         Container(
           color:colors.grey,
           child:
-            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM","1345.42 Sq.Ft"," Rs.6500/- Per Sq.Ft.","36",'assets/plans/threebhkunitplan9.pdf',context),
+            row_card_widget().child_row_res('assets/images/app_icons/floorplan.png',"Unit Plan - LOWER PENT HOUSE With SERVANT ROOM","1345.42 Sq.Ft"," Rs.7500/- Per Sq.Ft.","36",'assets/plans/threebhkunitplan9.pdf',context),
         ),
 
           ],
